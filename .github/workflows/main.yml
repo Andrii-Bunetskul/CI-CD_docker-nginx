@@ -7,16 +7,16 @@ on:
       
 jobs:
   ci_part:
-    runs-on: ubuntu:latest
+    runs-on: ubuntu:18.04
     
     steps:
     - name: Git clone repositories
       uses: actions/checkout@v2
   
   cd_part:
-    runs-on: ubuntu:latest
+    runs-on: ubuntu:18.04
     needs: [ci_part]
     
     steps:
     - name: Build the Docker Compose
-      run: docker-compose up #-d --build --scale app=3
+      run: docker-compose up -d --build --scale app=3
