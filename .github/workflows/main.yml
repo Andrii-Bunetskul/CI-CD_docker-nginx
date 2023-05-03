@@ -12,11 +12,17 @@ jobs:
     steps:
     - name: Git clone repositories
       uses: actions/checkout@v2
+      
+    - name: ls -la repo
+      run: ls -la
   
   cd_part:
     runs-on: ubuntu-20.04
     needs: [ci_part]
     
     steps:
+    - name: ls -la repo
+      run: ls -la
+      
     - name: Build the Docker Compose
       run: docker-compose up -d --build --scale app=3
