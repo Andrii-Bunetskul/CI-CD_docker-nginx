@@ -7,14 +7,14 @@ on:
       
 jobs:
   ci_part:
-    runs-on: ubuntu:18.04
+    runs-on: ubuntu-20.04
     
     steps:
     - name: Git clone repositories
       uses: actions/checkout@v2
   
   cd_part:
-    runs-on: ubuntu:18.04
+    runs-on: ubuntu-20.04
     needs: [ci_part]
     
     steps:
